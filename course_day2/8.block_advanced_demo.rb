@@ -18,7 +18,7 @@ class Array
 end
 array = [1, 2, 3, 4]
 puts "Before transform! : #{array.inspect}"
-array.transform! { |n| n**2 }
+array.transform! { |n| n*n }
 puts "After transform! : #{array.inspect}"
 
 =begin

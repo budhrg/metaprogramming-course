@@ -34,7 +34,7 @@ class Array
 end
 array = [1, 2, 3, 4]
 puts "Before transform! : #{array.inspect}"
-array.transform!(lambda { |n| n**2 })
+array.transform!(lambda { |n| n*n })
 puts "After transform! : #{array.inspect}"
 
 # Assignment

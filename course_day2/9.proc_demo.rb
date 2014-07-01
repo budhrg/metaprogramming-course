@@ -1,6 +1,7 @@
 # Proc:  Blocks of code that have been bound to a set of local variables.
 #        Once bound, the code may be called in different contexts and still
 #        access those variables.
+# Since, we can't pass more than one block to method at a time hence Proc
 
 puts '==========> 1. Proc Demo'
 def gen_times(factor)
@@ -26,7 +27,7 @@ class Array
 end
 array = [1, 2, 3, 4]
 puts "Before transform! : #{array.inspect}"
-array.transform!(Proc.new { |n| n**2 })
+array.transform!(Proc.new { |n| n*n })
 puts "After transform! : #{array.inspect}"
 
 
@@ -34,8 +35,8 @@ puts "After transform! : #{array.inspect}"
 
 puts '==========> 3. transform! : Advanced way'
 array = [1, 2, 3, 4]
-square = Proc.new {|n| n*2 }
-cube = Proc.new {|n| n*3 }
+square = Proc.new {|n| n*n }
+cube = Proc.new {|n| n*n*n }
 puts "Before transform! : #{array.inspect}"
 array.transform!(square)
 puts "After transform! as square : #{array.inspect}"
