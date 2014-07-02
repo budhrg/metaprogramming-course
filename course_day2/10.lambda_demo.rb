@@ -38,6 +38,9 @@ puts "Before transform! : #{array.inspect}"
 array.transform!(lambda { |n| n*n })
 puts "After transform! : #{array.inspect}"
 
+
+
+
 # Assignment
 # 1. Create a lambda that will increment any number passed to
 #    it by 5.
