@@ -1,7 +1,10 @@
-# Proc:  Blocks of code that have been bound to a set of local variables.
-#        Once bound, the code may be called in different contexts and still
+# Proc:  Blocks of code that have been bound to a set of
+#         local variables.
+#        Once bound, the code may be called in different contexts
+#        and still
 #        access those variables.
-# Since, we can't pass more than one block to method at a time hence Proc
+# Since, we can't pass more than one block to method at a time
+#        hence Proc
 
 puts '==========> 1. Proc Demo'
 def gen_times(factor)
@@ -46,3 +49,6 @@ puts "Before transform! : #{array.inspect}"
 array.transform!(cube)
 puts "After transform! as cube: #{array.inspect}"
 
+# square[5]
+# square.(5)
+# square.call(5)

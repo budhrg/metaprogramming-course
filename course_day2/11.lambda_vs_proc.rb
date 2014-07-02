@@ -36,7 +36,7 @@ end
 puts '---> proc_return '
 puts proc_return
 
-puts '---> proc_return '
+puts '---> lambda_return '
 puts lambda_return
 
 

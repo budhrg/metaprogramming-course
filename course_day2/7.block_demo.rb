@@ -18,11 +18,13 @@ def block1
 end
 block1 { puts 'In the block' }
 
-# NOTE: The code in the block is not executed at the time it is encountered
-#       by the Ruby interpreter.
-# Instead, Ruby remembers the context in which the block appears and
-# then enters the method and execute block once yield is encountered.
-# If no code block is passed, Ruby raises an exception: no block given (LocalJumpError)
+# NOTE: The code in the block is not executed at the time it is
+#       encountered by the Ruby interpreter.
+# Instead, Ruby remembers the context in which the block appears
+# and then enters the method and execute block once yield is
+# encountered.
+# If no code block is passed,
+# Ruby raises an exception: no block given (LocalJumpError)
 
 
 # 2. Yield passing paramter
@@ -62,12 +64,13 @@ def block3
   else
     puts "no block"
   end
+  # yield('hello', 99) if block_given?
 end
 block3
 block3 { |str, num| puts str + ' ' + num.to_s }
 
 
-# 5. Hany use of yield-block pair in class
+# 5. Use of yield-block pair in class
 puts '=====> 5. Hany use of yield-block pair in class'
 class Person
   def initialize(name)

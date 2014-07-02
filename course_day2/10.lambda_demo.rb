@@ -1,4 +1,5 @@
 # Like a function without a name(anonymous)
+# From 1.9+, ->() {} or lambda {}
 # Last expression is return value
 # Lambdas in Ruby are also objects.
 # It is quite similar to Proc
@@ -38,5 +39,6 @@ array.transform!(lambda { |n| n*n })
 puts "After transform! : #{array.inspect}"
 
 # Assignment
-# 1. Create a lambda that will increment any number passed to it by 5.
+# 1. Create a lambda that will increment any number passed to
+#    it by 5.
 # 2. Create a lambda to multiply two numbers.

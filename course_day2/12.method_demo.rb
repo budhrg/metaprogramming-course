@@ -1,5 +1,7 @@
-# Method: Way of storing actual named methods and passing them around as
-#         arguments to or returns from other methods in your code.
+# Method: Way of storing actual named methods and passing
+#         them around as arguments to or returns from other
+#         methods in your code.
+
 class Array
   def transform!(code)
     self.each_with_index do |n, i|

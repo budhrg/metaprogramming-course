@@ -1,12 +1,12 @@
 # send: Call method dynamically
 puts '==========> 1. Static Approach'
 class Behavior
-  def eat
-    puts "I am eating"
+  def eat(args = nil)
+    puts "I am eating #{args.join(', ') if args}."
   end
 
-  def sing
-    puts "I am singing"
+  def sing(args = nil)
+    puts "I am singing #{args.join(', ') if args}."
   end
 end
 
@@ -29,11 +29,6 @@ end
 person = Person1.new(Behavior.new)
 person.do("eat")
 person.do("sing")
-begin
-  person.do("dance")
-rescue
-  puts "Can't dance :( "
-end
 
 
 # Dynamic Approach
@@ -43,20 +38,20 @@ class Person2
     @behavior = behavior
   end
 
-  def do(action)
-    @behavior.send(action)
+  def do(action, *args)
+    @behavior.send(action, args)
   end
 end
 person = Person2.new(Behavior.new)
 person.do("eat")
 person.do("sing")
-begin
-  person.do("dance")
-rescue
-  puts "Can't dance :( "
-end
 
-puts '==========> 3. Another example: Relay Messages'
+
+puts '==========> 3. Sending method with arguments'
+person.do('eat', 'pizza', 'burger', 'french fries')
+person.do('sing', 'classical')
+
+puts '==========> 4. Another example: Relay Messages'
 # Relay Messages
 # The relay method should return a new array,
 # but with all elements converted to data_type.
@@ -70,3 +65,4 @@ p relay(arr, 's')
 
 puts "Array #{arr.inspect} to float array"
 p relay(arr, 'f')
+
