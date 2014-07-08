@@ -2,10 +2,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.scoped
-    @products = @products.where("name like ?", "%" + params[:name] + "%") if params[:name]
-    @products = @products.where("price >= ?", params[:price_gt]) if params[:price_gt]
-    @products = @products.where("price <= ?", params[:price_lt]) if params[:price_lt]
+    @products = Product.search(params)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
