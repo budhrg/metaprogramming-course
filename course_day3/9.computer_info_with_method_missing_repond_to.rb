@@ -18,7 +18,7 @@ class Computer
       return "* #{result}" if price >= 3000
       result
     else
-      puts "Component #{name} avilable soon. Please check again later."
+      "Component #{name} avilable soon. Please check again later."
     end
   end
 end

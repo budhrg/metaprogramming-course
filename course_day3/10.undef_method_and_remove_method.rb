@@ -12,8 +12,8 @@ end
 #   end
 # end
 
-class Parent  
-  include Government  
+class Parent
+  include Government
   # include Panchayat
 
   def go_to_shool
@@ -31,7 +31,7 @@ class Parent
   def allow_to_come_late
     puts "I am allowed to come late."
   end
-  
+
   def method_missing(name, *args, &blk)
     puts "NOTE: #{self.class} not allowed to #{name.to_s.gsub(/_/, ' ')}."
   end
@@ -64,7 +64,7 @@ girl.do_kitchen_work
 girl.do_marriage_early
 
 
-puts "3. ===============> After Government's Marriage Amendment Act: "
+puts "3. ==============> After Government's Marriage Amendment Act: "
 module Government
   remove_method :do_marriage_early
 end
