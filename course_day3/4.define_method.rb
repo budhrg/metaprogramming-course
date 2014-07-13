@@ -1,5 +1,3 @@
-# define_method demo
-
 class A
   def foo
     puts "In Foo"
