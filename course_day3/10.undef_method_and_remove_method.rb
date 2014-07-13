@@ -1,7 +1,21 @@
 # Prevents the current class from responding to calls
 # to the named method
+module Government
+  def do_marriage_early
+    puts "Doing marriage early."
+  end
+end
 
-class Parent
+# module Panchayat
+#   def do_marriage_early
+#     puts "Doing marriage early."
+#   end
+# end
+
+class Parent  
+  include Government  
+  # include Panchayat
+
   def go_to_shool
     puts "I am going to school."
   end
@@ -17,11 +31,7 @@ class Parent
   def allow_to_come_late
     puts "I am allowed to come late."
   end
-
-  def do_marriage_early
-    puts "Doing marriage early."
-  end
-
+  
   def method_missing(name, *args, &blk)
     puts "NOTE: #{self.class} not allowed to #{name.to_s.gsub(/_/, ' ')}."
   end
@@ -54,8 +64,8 @@ girl.do_kitchen_work
 girl.do_marriage_early
 
 
-puts " ============= After Marriage Act ============= "
-class Parent
+puts "3. ===============> After Government's Marriage Amendment Act: "
+module Government
   remove_method :do_marriage_early
 end
 boy.do_marriage_early
