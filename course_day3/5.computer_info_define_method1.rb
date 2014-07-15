@@ -24,7 +24,6 @@ class Computer
 end
 
 puts "===============> Using Define Method "
-data = {}
 comp = Computer.new('P4', DataSource.new)
 puts comp.mouse
 puts comp.cpu

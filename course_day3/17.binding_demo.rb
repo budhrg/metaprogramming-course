@@ -8,3 +8,4 @@ class MyClass
 end
 
 b = MyClass.new.my_method
+puts b.eval("@x")
