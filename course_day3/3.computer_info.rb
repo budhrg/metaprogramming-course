@@ -31,7 +31,6 @@ class Computer
 end
 
 puts "===============> Delegation based on component name "
-data = {}
 comp = Computer.new('P4', DataSource.new)
 puts comp.mouse
 puts comp.cpu

@@ -29,7 +29,6 @@ class Computer
 end
 
 puts "===============> Methods based on peripharials "
-data = {}
 comp = Computer.new('P4', DataSource.new)
 puts comp.mouse
 puts comp.cpu

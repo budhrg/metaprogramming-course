@@ -2,8 +2,11 @@ class A
   def foo
     puts "In Foo"
   end
-  def create_method(name, &block)
+  def instance_method(name, &block)
     self.class.send(:define_method, name, &block)
+  end
+  def class_method(name, &block)
+  	(class << self; self; end).send(:define_method, name, &block)
   end
   define_method(:bar) { puts "In Bar" }
 end
@@ -14,5 +17,18 @@ end
 a = B.new
 a.call_foo
 a.bar
-a.create_method(:fum) { puts "In fum inside #{self.to_s}" }
+a.instance_method(:fum) { puts "In fum inside #{self.to_s}" }
+a.class_method(:bum) { puts "In bum inside #{self.to_s}" }
 a.fum
+a.bum # is it really a Class method?
+
+begin
+	A.bum
+rescue Exception => e
+  puts e.message
+end
+
+
+# Assignment :
+# Create a method(instance or class) that is used a
+# factory method for creating class method
