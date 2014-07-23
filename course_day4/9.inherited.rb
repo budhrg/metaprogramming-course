@@ -3,8 +3,13 @@
 # Class's method
 
 class Foo
+  @@no_of_child = 0
   def self.inherited(subclass)
-    puts "New child: '#{subclass}'"
+    @@no_of_child += 1
+  end
+
+  def self.children_count
+    @@no_of_child
   end
 end
 
@@ -13,3 +18,5 @@ end
 
 class Baz < Bar
 end
+
+puts Foo.children_count

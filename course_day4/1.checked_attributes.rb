@@ -21,7 +21,7 @@ class TestCheckedAttributes < Test::Unit::TestCase
 
   def test_refuses_invalid_values
     assert_raises RuntimeError, 'Invalid attribute' do
-      @bob.name = 'Budh'
+      @bob.name = 'Budh ram'
     end
   end
 end
