@@ -1,4 +1,4 @@
-metaprogramming-course
+Ruby Metaprogramming Course
 ======================
 
-Short term 'Metaprogramming Course' conducted in 'Vertis'.
+Short term 'Metaprogramming Course'
